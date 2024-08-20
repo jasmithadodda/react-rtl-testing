@@ -3,9 +3,6 @@ import { SkillsProps } from "./skills.types";
 
 function Skills(props: SkillsProps) {
 
-
-
-
   const { skills } = props;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
