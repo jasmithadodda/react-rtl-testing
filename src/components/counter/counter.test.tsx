@@ -26,10 +26,10 @@ describe('counter',()=>{
         const incrementButton = screen.getByRole('button',{
             name:"Increment"
         })
-        await user.click(incrementButton)
+        await user.dblClick(incrementButton)
         const countElement = screen.getByRole('heading')
-        expect(countElement).toHaveTextContent("1")
-
+        expect(countElement).toHaveTextContent("2")
+//tripleclick,hover,unhover --  convinience api's
      })
 
      test('sets 10 after clicking set button',async()=>{
@@ -39,6 +39,13 @@ describe('counter',()=>{
        await user.type(amountInput,'10')
         expect(amountInput).toHaveValue(10)
 
+        const setButton = screen.getByRole('button',{
+            name:"Set"
+        })
+        await user.click(setButton)
+        const countElement = screen.getByRole('heading')
+        expect(countElement).toHaveTextContent("10")
 
      })
+
 })
