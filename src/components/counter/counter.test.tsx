@@ -31,4 +31,14 @@ describe('counter',()=>{
         expect(countElement).toHaveTextContent("1")
 
      })
+
+     test('sets 10 after clicking set button',async()=>{
+        user.setup()
+        render(<Counter/>)
+        const amountInput = screen.getByRole('spinbutton')
+       await user.type(amountInput,'10')
+        expect(amountInput).toHaveValue(10)
+
+
+     })
 })
